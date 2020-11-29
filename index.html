@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
-		<h1>Ninety Blog</h1>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ninety Blog</title>
+		<!--导入bootstrap框架-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
-		<h3>欢迎来到我的博客</h3>
-		<h4>第一篇文章标题占位语句</h4>
-		<a href="post.html">更多>>></a>
+		<header>
+			<!--第一行-->
+			<div class="jumbotron container-fluid">
+				<div class="container">
+					<h1>Ninety Blog</h1>
+					<p>欢迎来到我的博客</p>
+					<p><a class="btn btn-primary btn-lg" href="post.html" role="button">Learn more</a></p>
+				</div>
+			</div>
+			<!--第二行-->
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="#">Home</a></li>
+			  <li role="presentation"><a href="post.html">Post</a></li>
+			  <li role="presentation"><a href="profile.html">Profile</a></li>
+			</ul>
+			<!--第三行-->
+			<div class="container-fluid">
+				<h4>第一篇文章标题占位语句</h4>
+				<p>第一篇文章摘要占位语句</p>
+				<a href="post.html">更多>>></a>
+			</div>		
+		</header>
+		<nav aria-label="Page navigation">
+		  <ul class="pagination">
+			<li>
+			  <a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			  </a>
+			</li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li>
+			  <a href="#" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			  </a>
+			</li>
+		  </ul>
+		</nav>
+		
+		<footer class="container-fluid">
+			<div class="row company">Copyright &copy; Ninety 2020-2020</div>
+		</footer>
 	</body>
-	
-	<footer>
-		<p class="">Copyright &copy; Ninety Website 2020</p>
-	</footer>
 </html>
