@@ -69,8 +69,19 @@
 		  </ul>
 		</nav>
 		
-		<footer class="navbar-fixed-bottom">
-			<div class="row company">Copyright &copy; Ninety 2020-2020</div>
+		<footer class="footer">
+			<div class="jumbotron text-center" style="margin-bottom:0">
+				<a>本站已经运行<a id="days">0</a><a>天</a></a>
+				<div class="copyright">Copyright &copy; Ninety 2020-2020</div>
+			</div>
 		</footer>
+		<script>
+			var s1 = '2020-11-21';//设置建站时间 
+			s1 = new Date(s1.replace(/-/g, "/")); 
+			s2 = new Date(); 
+			var days = s2.getTime() - s1.getTime(); 
+			var number_of_days = parseInt(days / (1000 * 60 * 60 * 24)); 
+			document.getElementById('days').innerHTML = number_of_days; 
+		</script>
 	</body>
 </html>

@@ -1,18 +1,4 @@
-*{
-    padding: 0px;
-    margin: 0px;
+html{
+	margin-top:0px;
+	margin-bottom:0px;
 }
-
-.padd-top {
-    padding-top: 10px;
-}
-
-.company {
-    /*字体大小12，背景色#f5eeee，文字居中对齐，高度与行高为40px*/
-    font-size: 12px;
-    background-color: #f5eeee;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-}
-
