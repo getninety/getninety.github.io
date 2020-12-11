@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ninety Blog</title>
+		<!--导入bootstrap框架-->
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/index.css" rel="stylesheet">
+		<script src="../../js/jquery-3.2.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+	</head>
+ 
+	<body>
+		<header>
+			<!--第一行-->
+			<div class="container-fluid">
+				<h1>Ninety Blog</h1>
+			</div>
+			<ul class="nav nav-tabs">
+			  <li role="presentation"><a href="../../index.html">Home</a></li>
+			  <li role="presentation" class="active"><a href="../../post.html">Post</a></li>
+			  <li role="presentation"><a href="../../profile.html">Profile</a></li>
+			</ul>
+		</header>
+		
+		<h4 class="container-fluid">【Linux】CentOS 7下安装JDK详细过程</h4>
+			<div class="container-fluid">
+			<ul>
+				<li>Linux上一般会安装Open JDK</li>
+				<li>工具：Xshell6，Xftp6</li>
+				<li>下面开始安装步骤：</li>
+			</ul>
+
+			<h5>第一步 卸载系统自带的OpenJDK以及相关的java文件</h5>
+
+			<h6>1.在命令窗口键入：</h6>
+			<blockquote>
+				<p>java -version</p>
+			</blockquote>
+			<p>可以看到系统自带的OpenJDK版本信息。</p>
+
+			<h6>2.在命令窗口键入：</h6>
+			<blockquote>
+				<p>rpm -qa | grep java</p>
+			</blockquote>
+			
+			<blockquote>
+				<p>rpm 　　管理套件</p>
+				<p>-qa 　　使用询问模式，查询所有套件</p>
+				<p>grep　　查找文件里符合条件的字符串</p>
+				<p>java 　 查找包含java字符串的文件</p>
+			</blockquote>
+			<h6>3.在命令窗口键入：</h6>
+			<blockquote>
+				<p>rpm -e --nodeps java-1.7.0-openjdk*</p>
+			</blockquote>
+			<blockquote>
+				<p>rpm 　　　  管理套件</p>
+				<p>-e　　　　　删除指定的套件</p>
+				<p>--nodeps　　不验证套件档的相互关联性</p>
+			</blockquote>
+
+			<h6>4.检查是否已经删除成功</h6>
+
+			<p>在命令窗口键入：</p>
+
+			<blockquote>
+				<p>java -version</p>
+			</blockquote>
+
+			<h5>第二步 下载最新稳定JDK</h5>
+
+			<h6>1.下载地址为http://www.oracle.com</h6>
+			<h6>2.下载的版本jdk-9.0.4_linux-x64_bin.tar.gz</h6>			
+
+			<h5>第三步 解压JDK</h5>
+
+			<h6>1.新建jdk文件夹</h6>
+
+			<blockquote>
+				<p>mkdir /usr/local/java</p>
+			</blockquote>
+			
+			<h6>2.解压jdk安装包</h6>
+
+			<p>通过Xftp6将下载好的压缩包上传到/usr/local/java</p>
+
+			<blockquote>
+				<p>tar zxvf jdk-9.0.4_linux-x64_bin.tar.gz</p>
+			</blockquote>
+
+			<p>此处我的安装包名称为jdk-9.0.4_linux-x64_bin.tar.gz，用户需根据下载的软件的版本的
+			不同进行修改</p>
+
+			<h6>3.删除jdk压缩包</h6>
+
+			<blockquote>
+				<p>rm jdk-8u161-linux-x64.tar.gz</p>
+			</blockquote>
+
+			<p>此处我的安装包名称为jdk-9.0.4_linux-x64_bin.tar.gz，用户需根据下载的软件的版本的
+			不同进行修改</p>
+
+			<h5>第四步 配置环境变量</h5>
+			
+			<h6>1.打开/etc/profile文件进行修改</h6>
+			<blockquote>
+				<p>vim /etc/profile</p>
+			</blockquote>
+
+			<p>提示：vim为linux自带的编辑器，常用命令如下：</p>
+			<blockquote>
+				<p>i :编辑、插入</p>
+				<p>esc :编辑结束</p>
+				<p>:q! :不保存退出</p>
+				<p>:wq! :保存退出</p>
+			</blockquote>
+
+			<h6>2.在/etc/profile末尾插入代码</h6>
+
+			<blockquote>
+				<p>JAVA_HOME=/usr/local/java/jdk-9.0.4</p>
+				<p>JRE_HOME=/usr/local/java/jdk-9.0.4/jre</p>
+				<p>CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</p>
+				<p>PATH=$JAVA_HOME/bin:$PATH</p>
+				<p>export PATH JAVA_HOME CLASSPATH</p>
+			</blockquote>
+
+			<p>其中：JAVA_HOME为jdk安装的文件夹，JRE_HOME为jdk中jre的文件夹，其他不用做修改</p>
+
+			<p>修改后保存退出</p>
+
+			<h6>3.使环境变量生效</h6>
+			<blockquote>
+				<p>source /etc/profile</p>
+			</blockquote>
+
+			<h6>4.检查jdk是否安装成功：</h6>
+
+			<blockquote>
+				<p>java -version</p>
+			</blockquote>
+			</div>
+	
+		<footer class="footer">
+			<div class="jumbotron text-center" style="margin-bottom:0">
+				<div class="copyright">Copyright &copy; Ninety 2020-2020</div>
+			</div>
+		</footer>
+	</body>
+</html>
