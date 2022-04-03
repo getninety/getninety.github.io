@@ -1,5 +1,5 @@
 ### Personal Blog
 
-预览地址：https://www.likangle.top
+预览地址：https://www.likangle.xyz
 
 ZERO TO ONE
